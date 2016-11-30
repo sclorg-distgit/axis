@@ -2,7 +2,7 @@
 %{!?scl:%global pkg_name %{name}}
 %{?java_common_find_provides_and_requires}
 
-%global baserelease 2
+%global baserelease 3
 
 Name:          %{?scl_prefix}axis
 Version:       1.4
@@ -33,7 +33,7 @@ Source8: axis-schema-1.4.pom
 Source9: axis-ant-MANIFEST.MF
 Patch0:        %{pkg_name}-java16.patch
 Patch1:        %{pkg_name}-manifest.patch
-Patch2:        axis-1.4-wsdl-pom.patch
+#Patch2:        axis-1.4-wsdl-pom.patch
 # CVE-2012-5784: Does not verify that the server hostname matches X.509 certificate name
 # https://issues.apache.org/jira/secure/attachment/12560257/CVE-2012-5784-2.patch
 Patch3:        %{pkg_name}-CVE-2012-5784.patch
@@ -238,6 +238,9 @@ build-jar-repository %{buildroot}%{_javadir}/javax.xml.rpc/ javax.wsdl \
 %doc docs/*
 
 %changelog
+* Wed Jul 27 2016 Mat Booth <mat.booth@redhat.com> - 0:1.4-29.3
+- Remove unused patch
+
 * Tue Jul 26 2016 Mat Booth <mat.booth@redhat.com> - 0:1.4-29.2
 - Avoid optional deps not available in the SCL
 
