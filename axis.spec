@@ -2,7 +2,7 @@
 %{!?scl:%global pkg_name %{name}}
 %{?java_common_find_provides_and_requires}
 
-%global baserelease 3
+%global baserelease 4
 
 Name:          %{?scl_prefix}axis
 Version:       1.4
@@ -102,6 +102,7 @@ Javadoc for %{pkg_name}.
 
 %package manual
 Summary:        Manual for %{pkg_name}
+Requires:      %{name}-javadoc = %{version}-%{release}
 
 %description manual
 Documentation for %{pkg_name}.
@@ -238,6 +239,9 @@ build-jar-repository %{buildroot}%{_javadir}/javax.xml.rpc/ javax.wsdl \
 %doc docs/*
 
 %changelog
+* Wed Sep 07 2016 Mat Booth <mat.booth@redhat.com> - 0:1.4-29.4
+- Add missing R to fix broken link in manual package
+
 * Wed Jul 27 2016 Mat Booth <mat.booth@redhat.com> - 0:1.4-29.3
 - Remove unused patch
 
