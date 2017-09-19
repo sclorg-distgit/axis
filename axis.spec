@@ -2,7 +2,7 @@
 %{!?scl:%global pkg_name %{name}}
 %{?java_common_find_provides_and_requires}
 
-%global baserelease 4
+%global baserelease 5
 
 Name:          %{?scl_prefix}axis
 Version:       1.4
@@ -239,6 +239,9 @@ build-jar-repository %{buildroot}%{_javadir}/javax.xml.rpc/ javax.wsdl \
 %doc docs/*
 
 %changelog
+* Wed Feb 15 2017 Mat Booth <mat.booth@redhat.com> - 0:1.4-29.5
+- Relax servlet version restriction
+
 * Wed Sep 07 2016 Mat Booth <mat.booth@redhat.com> - 0:1.4-29.4
 - Add missing R to fix broken link in manual package
 
